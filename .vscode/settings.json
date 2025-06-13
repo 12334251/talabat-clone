@@ -3,8 +3,12 @@
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit",
     "source.sortMembers": "explicit"
+<<<<<<< HEAD
   },
   "cSpell.words": [
     "vegitable"
   ]
+=======
+  }
+>>>>>>> 4b0fe7b (Initial commit)
 }
