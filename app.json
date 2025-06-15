@@ -9,12 +9,19 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "edgeToEdgeEnabled": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"],
+      "foregroundService": {
+        "notificationTitle": "Using location",
+        "notificationBody": "To provide location-based services.",
+        "notificationColor": "#000000"
       },
       "edgeToEdgeEnabled": true
     },
