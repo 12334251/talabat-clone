@@ -215,7 +215,7 @@ export default function HomeScreen() {
             </Text>
             <TouchableOpacity
               className="mt-4 bg-orange-500 px-5 py-2 rounded-full self-start"
-              onPress={() => router.navigate("/(auth)/login")}
+              onPress={() => router.navigate("/modal")}
             >
               <Text className="text-white font-medium text-base">Log in</Text>
             </TouchableOpacity>
@@ -314,3 +314,69 @@ export default function HomeScreen() {
     </View>
   );
 }
+
+// HomeScreen.tsx
+// import PromosModal from "@/components/PromosModal";
+// import React, { useState } from "react";
+// import { Button, StyleSheet } from "react-native";
+// import Animated, {
+//   Easing,
+//   runOnJS,
+//   useAnimatedStyle,
+//   useSharedValue,
+//   withTiming,
+// } from "react-native-reanimated";
+// import { SafeAreaView } from "react-native-safe-area-context";
+
+// export default function HomeScreen() {
+//   const [modalVisible, setModalVisible] = useState(false);
+//   const progress = useSharedValue(0); // 0 = closed, 1 = open
+
+//   const openModal = () => {
+//     progress.value = withTiming(
+//       1,
+//       { duration: 400, easing: Easing.out(Easing.ease) },
+//       () => {
+//         runOnJS(setModalVisible)(true);
+//       }
+//     );
+//   };
+
+//   const closeModal = () => {
+//     progress.value = withTiming(
+//       0,
+//       { duration: 400, easing: Easing.in(Easing.ease) },
+//       () => {
+//         runOnJS(setModalVisible)(false);
+//       }
+//     );
+//   };
+
+//   const animatedBackground = useAnimatedStyle(() => {
+//     const scale = 1 - 0.1 * progress.value;
+//     const rotateX = -12 * progress.value;
+//     return {
+//       transform: [
+//         { perspective: 1000 },
+//         { scale },
+//         { rotateX: `${rotateX}deg` },
+//       ],
+//     };
+//   });
+
+//   return (
+//     <SafeAreaView style={styles.container}>
+//       <Animated.View style={[styles.content, animatedBackground]}>
+//         {/* your ScrollView and other UI go here */}
+//         <Button title="Show Promo" onPress={openModal} />
+//       </Animated.View>
+
+//       {modalVisible && <PromosModal onClose={closeModal} />}
+//     </SafeAreaView>
+//   );
+// }
+
+// const styles = StyleSheet.create({
+//   container: { flex: 1 },
+//   content: { flex: 1, overflow: "hidden" },
+// });

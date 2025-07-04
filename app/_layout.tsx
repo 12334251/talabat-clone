@@ -45,6 +45,17 @@ export default function RootLayout() {
               <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
               <Stack.Screen name="(product)" options={{ headerShown: false }} />
               <Stack.Screen name="+not-found" />
+              <Stack.Screen
+                name="modal"
+                options={{
+                  presentation: "modal",
+                  animation: "slide_from_bottom",
+                  animationDuration: 100,
+                  headerShown: false,
+                  gestureEnabled: true,
+                  gestureDirection: "vertical",
+                }}
+              />
             </Stack>
           </LocationProvider>
         </CartProvider>
